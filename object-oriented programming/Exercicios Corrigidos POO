@@ -1,0 +1,213 @@
+Lista de Exercicios POO:
+
+1) # Exercicio 01
+num1=float(input("Digite o número 01:"))
+num2=float(input("Digite o número 02:"))
+num3=float(input("Digite o número 03:"))
+
+maior=menor=meio=0
+if num1>=num2 and num1>=num3:   
+    maior=num1
+    if num2>=num3:
+        meio=num2
+        menor=num3
+    else:
+        meio=num3
+        menor=num2
+        
+if num2>=num1 and num2>=num3:
+    maior=num2
+    if num1>=num3:
+        meio=num1
+        menor=num3
+    else:
+        meio=num3
+        menor=num1        
+
+if num3>=num1 and num3>=num2:
+    maior=num3
+    if num1>=num2:
+        meio=num1
+        menor=num2
+    else:
+        meio=num2
+        menor=num1
+        
+print("Maior={}, Meio={} e Menor={}".format(maior,meio,menor))
+
+2)#Exercicio 02
+
+num=float(input("Digite o número inicial:"))
+div = num/10
+cont=1
+while(div!=0): 
+    div=div/10
+    cont=cont+1
+
+print("Número de divisões=",cont)
+Maria Julia Silva Fonseca Guedes Nobre
+14:56
+sim
+Marcelo Lisboa Rocha
+14:58
+#Exercicio 03
+vetA=[]
+vetB=[]
+vetC=[]
+
+for i in range(1,4):
+    val=0
+    while(val<1 or val>100):
+        val=int(input("Digite um valor para o vetor A:"))
+    vetA.append(val)
+    val=0
+    while(val<1 or val>100):
+        val=int(input("Digite um valor para o vetor B:"))
+    vetB.append(val)
+
+for i in range(len(vetA)):
+    
+    vetC.append(vetA[i]+vetB[i])
+
+print("Elementos do vetor C=")
+#pode fazer desse jeito ou do jeito abaixo    
+for i in range(len(vetC)):
+    print(vetC[i])
+    
+3)#Exercicio 03
+vetA=[]
+vetB=[]
+vetC=[]
+
+from random import *
+
+#quando fornece uma semente e é sempre a mesma..são sempre gerados
+#os mesmos números aleatórios
+#seed(1) 
+
+#random gera número aleatório entre 0 e 1
+
+#peenche os vetores utilizando números aleatórios
+for i in range(1,4):
+    val=(int(random()*10000)%100)+1
+    print(val)
+    
+    vetA.append(val)
+    
+    val=(int(random()*10000)%100)+1
+    print(val)
+    
+    vetB.append(val)
+
+for i in range(len(vetA)):
+    
+    vetC.append(vetA[i]+vetB[i])
+
+print("Elementos do vetor C=")
+#pode fazer desse jeito ou do jeito abaixo    
+for i in range(len(vetC)):
+    print(vetC[i])
+
+    
+4)#Exercicio 4
+
+tam=0
+while(tam<3):
+    nome=input("Digite o nome:")
+    tam=len(nome)
+    if(tam<3):
+        print("Digite um nome que tenha pelo menos 3 letras")
+
+
+idade=-1
+while(idade<0 or idade>150):
+    idade=int(input("Digite a idade:"))
+salario=0
+while(salario<=0):
+    salario=float(input("Digite o salário:"))
+
+sexo=""
+while(sexo!="f" and sexo!="m"):
+    sexo=input("Digite o sexo (f ou m):")
+    sexo=sexo.lower() #tranforma a string para minúscula
+    #sexo=sexo.upper() #transforma a string para maiúscula
+    if(sexo!="f" and sexo!="m"):
+        print("Favor digitar o sexo corretamente (f ousalario=0
+while(salario<=0):
+    salario=float(input("Digite o salário:"))
+
+sexo=""
+while(sexo!="f" and sexo!="m"):
+    sexo=input("Dim)")
+Marcelo Lisboa Rocha
+15:19
+sexo=""
+while(sexo!="f" and sexo!="m"):
+    sexo=input("Digite o sexo (f ou m):")
+    sexo=sexo.lower() #tranforma a string para minúscula
+    #sexo=sexo.upper() #transforma a string para maiúscula
+    if(sexo!="f" and sexo!="m"):
+        print("Favor digitar o sexo corretamente (f ou m)")
+civil=""
+while(civil!="s" and civil!="c" and civil!="v" and civil!="d"):
+    civil=input("Digite o estado civil (s, c, v ou d):")
+    civil=civil.lower()
+    
+5)#Exercicio 05
+
+pop1=80000
+tx1=0.03
+pop2=200000
+tx2=0.015
+ano=0
+while(pop1<pop2):
+    pop1=int(pop1*(1+tx1))
+    pop2=int(pop2*(1+tx2))
+    ano=ano+1
+
+print("A população do país A com {} habitantes ultrapassa a população do país B com {} habitantes em {} anos".format(pop1,pop2,ano))
+ 
+6)#Execicio 06
+
+num=int(input("Digite o número para verificar se é primo:"))
+
+ehprimo=True
+for div in range(2,num):
+    if num%div == 0:
+        print("{} não é primo".format(num))
+        ehprimo=False
+        break
+
+if ehprimo:
+    print("{} é primo".format(num))
+Mateus Alves Araujo
+15:52
+if(num%2==0):
+    print("numero não primo:")
+else: 
+    print("numero é primo:") 
+    
+8)#Exercicio 8
+
+opcoes=["1- Windows Server","2- Unix","3- Linux","4- Netware","5- Mac OS","6- Outro"]
+
+conta=[0]*6 #inicializa o vetor com 0s e de tamanho 6
+total=0
+val=1
+while(val!=0):
+    for i in opcoes:
+        print(i)
+        
+    val=int(input("Digite uma das opções acima ou 0 para sair:"))
+if(val!=0):
+        conta[val-1]=conta[val-1]+1
+        
+for i in range(len(conta)):
+    total=total+conta[i]
+print("Sistema Operacional \t\t Votos \t\t %")
+print("---------------------------------")
+for i in range(len(conta)):
+    print("{} \t\t {} \t\t {:.2f}".format(opcoes[i],conta[i],(conta[i]/total)*100))
+    
+print("---------------------------------")
+print("Total=",total)
